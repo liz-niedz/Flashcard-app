@@ -30,7 +30,6 @@ function CardList({ cards }) {
   const flipHandler = () => {
     setFrontSide(() => !frontSide);
   };
-console.log(currentCard)
   if (!cards) {
     return null;
   }

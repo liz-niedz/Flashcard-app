@@ -9,19 +9,13 @@
       "name": "React Router",
       "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2
-    },
-    {
-      "name": "Liz",
-      "desription": "",
-      "description": "hello world!",
-      "id": 3
     }
   ],
   "cards": [
     {
       "id": 1,
-      "front": "Differentiate between Real DOM and Virtual DOM.",
-      "back": "Virtual DOM updates are faster but do not directly update the HTML",
+      "front": "Differentiate between Real DOM and Virtual DOM.!!",
+      "back": "Virtual DOM updates are faster but do not directly update the HTML!!",
       "deckId": 1
     },
     {
@@ -37,12 +31,6 @@
       "deckId": 1
     },
     {
-      "front": "What path will match the follow Route?\n<Route>\n  <NotFound />\n</Route>",
-      "back": "All paths. A route with no path matches all URL's",
-      "deckId": 2,
-      "id": 4
-    },
-    {
       "front": "What does <Switch> do?",
       "back": "Renders the first matching child <Route> ",
       "deckId": 2,
@@ -56,28 +44,16 @@
       "id": 7
     },
     {
-      "front": "Front side of card",
-      "back": "Back side of card",
-      "deckId": 3,
-      "id": 11
+      "front": "Hello",
+      "back": "World",
+      "deckId": 1,
+      "id": 8
     },
     {
-      "front": "Front side of card",
-      "back": "Back side of card",
-      "deckId": 3,
-      "id": 12
-    },
-    {
-      "front": "Front side of card",
-      "back": "Back side of card",
-      "deckId": 3,
-      "id": 13
-    },
-    {
-      "front": "lol!",
-      "back": "hello!",
-      "deckId": 3,
-      "id": 14
+      "front": "Hello!",
+      "back": "World",
+      "deckId": 2,
+      "id": 9
     }
   ]
 }

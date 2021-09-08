@@ -64,7 +64,8 @@ function Deck() {
               )
             ) {
               await deleteDeck(deck.id);
-              history.go(`/decks/${deckId}`);
+              history.push("");
+              window.location.reload(false);
             }
           }}
         >

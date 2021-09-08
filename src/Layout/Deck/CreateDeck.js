@@ -34,7 +34,7 @@ function CreateDeck() {
       <div>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label for="name">Name</label>
+            <label className="name">Name</label>
             <input
               type="text"
               id="name"
@@ -46,7 +46,7 @@ function CreateDeck() {
             />
           </div>
           <div className="form-group">
-            <label for="description">Description</label>
+            <label className="description">Description</label>
             <textarea
               name="description"
               id="description"

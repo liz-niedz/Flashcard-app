@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createCard, readDeck } from "../utils/api/index";
 import { useHistory, useParams } from "react-router-dom";
+import CardForm from "./CardForm";
 
 function AddCard() {
   const [deck, setDeck] = useState([]);
@@ -8,20 +9,14 @@ function AddCard() {
   const history = useHistory();
   const [front, setFront] = useState("Front side of card");
   const [back, setBack] = useState("Back side of card");
-  console.log(deckId);
+ 
 
   useEffect(() => {
-    const abortController = new AbortController();
     async function loadDeck() {
-      try {
-        const getDeckFromAPI = await readDeck(deckId, abortController.signal);
+        const getDeckFromAPI = await readDeck(deckId);
         setDeck(getDeckFromAPI);
-      } catch (error) {
-          console.log(error)
-      }
     }
     loadDeck();
-    return () => abortController.abort();
   }, [deckId]);
 
   const handleSubmit = (event) => {
@@ -31,10 +26,13 @@ function AddCard() {
       back: back,
       deckId: deckId,
     };
-    createCard(deckId, card).then((response) => {
+    async function updateCard() {
+        await createCard(deckId, card);
+      };
+      updateCard();
       setFront("Front side of card");
       setBack("Back side of card");
-    });
+    
     history.push(`/decks/${deck.id}`);
   };
 
@@ -57,39 +55,12 @@ function AddCard() {
       </div>
 
       <div>
-        <form>
-          <div className="form-group">
-            <label for="name">Front</label>
-            <textarea
-              className="form-control"
-              required
-              rows="3"
-              value={front}
-              onChange={(event) => setFront(event.target.value)}
-            />
-          </div>
-          <div className="form-group">
-            <label for="exampleFormControlTextarea1">Back</label>
-            <textarea 
-            className="form-control" 
-            required rows="3" 
-            value={back} 
-            onChange={(event) => setBack(event.target.value)}/>
-          </div>
-          <button
-            type="button"
-            className="btn btn-secondary"
-            onClick={() => history.push("/")}
-          >
-            Done
-          </button>
-          <button 
-          type="submit" 
-          className="btn btn-primary"
-          onClick={handleSubmit}>
-            Save
-          </button>
-        </form>
+        <CardForm 
+        front={front} 
+        back={back} 
+        handleSubmit={handleSubmit} 
+        setFront={setFront}
+        setBack={setBack}/>
       </div>
     </div>
   );

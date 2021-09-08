@@ -66,7 +66,7 @@ updateDeck(currentDeck)
       <div>
         <form>
           <div className="form-group">
-            <label for="name">Name</label>
+            <label className="name">Name</label>
             <input
               type="name"
               className="form-control"
@@ -76,7 +76,7 @@ updateDeck(currentDeck)
             />
           </div>
           <div className="form-group">
-            <label for="exampleFormControlTextarea1">Description</label>
+            <label className="exampleFormControlTextarea1">Description</label>
             <textarea
               className="form-control"
               id="exampleFormControlTextarea1"
