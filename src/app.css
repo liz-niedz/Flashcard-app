@@ -1,0 +1,9 @@
+.btn{
+    margin: 5px;
+}
+.deck-cards{
+    list-style: none;
+}
+.row-card-body{
+    justify-content: space-evenly;
+}
