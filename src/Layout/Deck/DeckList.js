@@ -24,7 +24,8 @@ function DeckList({ decks }) {
               <a
                 href="/"
                 className="btn btn-danger"
-                onClick={() => {
+                onClick={(event) => {
+                  event.preventDefault();
                   if (
                     window.confirm(
                       "Delete this deck? You won't be able to recover it."

@@ -57,14 +57,15 @@ function Deck() {
         <button
           type="button"
           className="btn btn-danger"
-          onClick={async () => {
+          onClick={async (event) => {
+            event.preventDefault();
             if (
               window.confirm(
                 "Delete this deck? You won't be able to recover it."
               )
             ) {
               await deleteDeck(deck.id);
-              history.push("");
+              history.push("/")
               window.location.reload(false);
             }
           }}
@@ -100,7 +101,6 @@ function Deck() {
                       )
                     ) {
                       deleteCard(`${card.id}`);
-                      history.go(`/decks/${deckId}`);
                     }
                   }}
                 >
